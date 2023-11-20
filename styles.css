@@ -1,0 +1,20 @@
+body {
+    background: #1d2630;
+}
+
+h2, h3, h4 {
+    color: #fff;
+}
+
+ #Update {
+    display: none;
+}
+
+#toString {
+    color: black;
+    display: contents;
+}  
+
+.form-group {
+    color: white;
+}

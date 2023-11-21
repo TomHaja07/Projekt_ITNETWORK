@@ -3,10 +3,10 @@
 // deklarace typu polí dat a vytvoření podmínek pro zadávání dat před odesláním //
 
 function validateForm() {
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var age = document.getElementById("age").value;
-    var city = document.getElementById("city").value;
+    let name = document.getElementById("name").value;
+    let surname = document.getElementById("surname").value;
+    let age = document.getElementById("age").value;
+    let city = document.getElementById("city").value;
 
     if(name == "") {
     alert("Pole jméno nesmí být prázdné");
@@ -37,14 +37,14 @@ function validateForm() {
 ///// Funkce pro zobrazení uložených dat /////
 
 function showData() {
-    var peopleList;
+    let peopleList;
     if (localStorage.getItem("peopleList") == null) {
     peopleList = [];
     } else {
     peopleList = JSON.parse(localStorage.getItem("peopleList"));
     }
 
-    var html ="";
+    let html ="";
 
     peopleList.forEach(function (element, index) {
     html += "<tr>";
@@ -70,12 +70,12 @@ function showData() {
 
 function AddData() {
     if(validateForm() == true){
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var age = document.getElementById("age").value;
-    var city = document.getElementById("city").value;
+    let name = document.getElementById("name").value;
+    let surname = document.getElementById("surname").value;
+    let age = document.getElementById("age").value;
+    let city = document.getElementById("city").value;
 
-    var peopleList;
+    let peopleList;
     if (localStorage.getItem("peopleList") == null) {
         peopleList = [];
     } else {
@@ -103,7 +103,7 @@ function AddData() {
 
 // Funkce pro smazání údaje //
 function deleteData(index){
-    var peopleList;
+    let peopleList;
     if (localStorage.getItem("peopleList") == null) {
     peopleList = [];
     }  
@@ -125,7 +125,7 @@ function updateData(index) {
     document.getElementById("Submit").style.display = "none";
     document.getElementById("Update").style.display = "block";
 
-    var peopleList;
+    let peopleList;
     if (localStorage.getItem("peopleList") == null) {
         peopleList = [];
     } else {
@@ -164,12 +164,12 @@ function updateData(index) {
 
 // Funkce pro zobrazení uložených dat jako řetězce pod tabulkou
 function toString() {
-    var storedData = localStorage.getItem("peopleList");
+    let storedData = localStorage.getItem("peopleList");
 
     if (storedData) {
 
-        var peopleList = JSON.parse(storedData);
-        var dataAsString = "<strong>Seznam:</strong><br>";
+        let peopleList = JSON.parse(storedData);
+        let dataAsString = "<strong>Seznam:</strong><br>";
 
         peopleList.forEach(function (element) {
             dataAsString += `<div>Jméno: ${element.name}, Přijmení: ${element.surname}, Věk: ${element.age}, Město: ${element.city}</div>`;
